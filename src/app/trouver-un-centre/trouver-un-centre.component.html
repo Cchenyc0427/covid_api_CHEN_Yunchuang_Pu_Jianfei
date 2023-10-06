@@ -1,0 +1,23 @@
+<p class="title">trouver un centre de vaccination</p>
+<div class="search-box">
+  <input [(ngModel)]="userInput" type="text" id="city-name-input" placeholder="Dans quelle ville ?"/>
+  <div class="search-icon">
+    <button (click)="fetchCenterByCity()">
+      <span nz-icon nzType="search" nzTheme="outline"></span>
+    </button>
+  </div>
+</div>
+<div class="center-list">
+  <ul>
+    <li *ngFor="let item of _centerData" class={{item.name}}>
+      <div>
+        <div>{{item.name}}</div>
+        <div>{{item.address}}</div>
+      </div>
+      <div class="search-button-box">
+        <button nz-button nzType="primary" routerLink="/conformer-reservation/{{item.id}}" class="">Choisir</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
