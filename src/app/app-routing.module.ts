@@ -6,6 +6,10 @@ import {ReservationSuccessComponent} from "./reservation-success/reservation-suc
 import {ReservationFailedComponent} from "./reservation-failed/reservation-failed.component";
 import {NzDemoFormHorizontalLoginComponent} from "./login/login.component";
 import {SuperAdminComponent} from "./super-admin/super-admin.component";
+import {AdminCentersComponent} from "./admin-centers/admin-centers.component";
+import {AdminMonCentersComponent} from "./admin-mon-centers/admin-mon-centers.component";
+import {AdminPlanningComponent} from "./admin-planning/admin-planning.component";
+import {AdminConfigComponent} from "./admin-config/admin-config.component";
 
 const routes: Routes = [
   { path: "trouver-center", component: TrouverUnCentreComponent},
@@ -14,6 +18,10 @@ const routes: Routes = [
   { path: "reservation-failed", component: ReservationFailedComponent},
   { path: "login", component: NzDemoFormHorizontalLoginComponent},
   { path: "super-admin", component: SuperAdminComponent},
+  { path: "admin-centers", component: AdminCentersComponent},
+  { path: "admin-mon-centers", component: AdminMonCentersComponent},
+  { path: "admin-planning", component: AdminPlanningComponent},
+  { path: "admin-config", component: AdminConfigComponent},
 ];
 
 @NgModule({
