@@ -2,7 +2,6 @@ package org.polytech.covid.Entity;
 
 import jakarta.persistence.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Table
@@ -14,16 +13,31 @@ public class VaccinationCenter {
     private String name;
     private String adresse;
     private String city;
-    @ManyToMany(targetEntity = Administrateur.class,mappedBy = "administrateur")
-    private List<Administrateur> administrateur;
+    @ManyToMany(targetEntity = SuperAdmin.class,mappedBy = "vaccinationCenterList")
+    private List<SuperAdmin> superAdminList;
 
-
-    public VaccinationCenter(int id, String name, String adress, String city, Administrateur administrateur, List<Administrateur> administrateur1) {
+    public VaccinationCenter(int id, String name, String adresse, String city, List<SuperAdmin> superAdminList) {
         this.id = id;
         this.name = name;
-        this.adresse = adress;
+        this.adresse = adresse;
         this.city = city;
-        this.administrateur = new ArrayList<>();
+        this.superAdminList = superAdminList;
+    }
+
+    public String getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(String adresse) {
+        this.adresse = adresse;
+    }
+
+    public List<SuperAdmin> getSuperAdminList() {
+        return superAdminList;
+    }
+
+    public void setSuperAdminList(List<SuperAdmin> superAdminList) {
+        this.superAdminList = superAdminList;
     }
 
     public VaccinationCenter() {

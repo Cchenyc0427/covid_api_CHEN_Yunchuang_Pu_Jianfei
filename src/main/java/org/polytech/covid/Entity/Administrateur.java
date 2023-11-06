@@ -1,8 +1,9 @@
 package org.polytech.covid.Entity;
 
-import jakarta.persistence.*;
-
-import java.util.List;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Table
 @Entity
@@ -11,37 +12,20 @@ public class Administrateur {
     private Integer AdministrateurId;
     private String nom;
     private String prenom;
+    @OneToOne(targetEntity = VaccinationCenter.class)
+    private VaccinationCenter vaccinationCenter;
 
-
-    @ManyToMany(targetEntity = VaccinationCenter.class)
-    @JoinTable(
-            name = "admin_center",
-            joinColumns = @JoinColumn(name = "admin_id"),
-            inverseJoinColumns = @JoinColumn(name = "center_id")
-    )
-    private List<VaccinationCenter> vaccinationCenterList;
 
     public Administrateur() {
     }
-    public Administrateur(Integer administrateurId, String nom, String prenom, List<VaccinationCenter> vaccinationCenterList) {
-        AdministrateurId = administrateurId;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.vaccinationCenterList = vaccinationCenterList;
-    }
+
 
 
     public void setAdministrateurId(Integer administrateurId) {
         AdministrateurId = administrateurId;
     }
 
-    public List<VaccinationCenter> getVaccinationCenterList() {
-        return vaccinationCenterList;
-    }
 
-    public void setVaccinationCenterList(List<VaccinationCenter> vaccinationCenterList) {
-        this.vaccinationCenterList = vaccinationCenterList;
-    }
 
 
     public int getAdministrateurId() {

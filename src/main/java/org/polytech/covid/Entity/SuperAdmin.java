@@ -17,8 +17,13 @@ public class SuperAdmin {
 
     private String password;
 
-    @OneToMany(targetEntity = VaccinationCenter.class)
-    List<VaccinationCenter> vaccinationCenterList;
+    @ManyToMany(targetEntity = VaccinationCenter.class)
+    @JoinTable(
+            name = "admin_center",
+            joinColumns = @JoinColumn(name = "admin_id"),
+            inverseJoinColumns = @JoinColumn(name = "center_id")
+    )
+    private List<VaccinationCenter> vaccinationCenterList;
 
     public List<VaccinationCenter> getVaccinationCenterList() {
         return vaccinationCenterList;
@@ -27,6 +32,7 @@ public class SuperAdmin {
     public void setVaccinationCenterList(List<VaccinationCenter> vaccinationCenterList) {
         this.vaccinationCenterList = vaccinationCenterList;
     }
+
     public String getPassword() {
         return password;
     }
