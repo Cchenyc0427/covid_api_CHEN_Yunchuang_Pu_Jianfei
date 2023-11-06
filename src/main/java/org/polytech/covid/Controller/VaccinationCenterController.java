@@ -20,7 +20,7 @@ public class VaccinationCenterController {
         if(city==null){
             return centerService.findAll();
         }
-        return centerService.findAllByCity(city);
+        return centerService.findAllByCityIgnoreCase(city);
 
     }
     @PostMapping(path = "/api/centers")
