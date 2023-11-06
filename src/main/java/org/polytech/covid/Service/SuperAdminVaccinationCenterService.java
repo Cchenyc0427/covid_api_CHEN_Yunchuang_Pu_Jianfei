@@ -15,7 +15,6 @@ public class SuperAdminVaccinationCenterService {
         this.superAdminPourVacinationCenterRespository = superAdminPourVacinationCenterRespository;
     }
 
-
     public VaccinationCenter findByName(String cityName){
         return superAdminPourVacinationCenterRespository.findByName(cityName);
     }

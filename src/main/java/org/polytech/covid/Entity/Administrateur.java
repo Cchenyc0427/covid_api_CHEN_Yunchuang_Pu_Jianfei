@@ -8,31 +8,63 @@ public class Administrateur {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "administrateur_id")
     @SequenceGenerator(name = "administrateur_id", sequenceName = "administrateur_id_seq",allocationSize = 1)
-    private Integer AdministrateurId;
+    private Integer administrateurId;
     private String nom;
     private String prenom;
-    @OneToOne(targetEntity = VaccinationCenter.class)
-    private VaccinationCenter vaccinationCenter;
 
+    private String mail;
+    private String telephone;
+    private String password;
+
+    public Administrateur(Integer administrateurId, String nom, String prenom, String mail, String telephone, String password) {
+        this.administrateurId = administrateurId;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.mail = mail;
+        this.telephone = telephone;
+        this.password = password;
+    }
 
     public Administrateur() {
     }
 
 
+    public String getMail() {
+        return mail;
+    }
 
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
     public void setAdministrateurId(Integer administrateurId) {
-        AdministrateurId = administrateurId;
+        administrateurId = administrateurId;
     }
 
 
 
 
     public int getAdministrateurId() {
-        return AdministrateurId;
+        return administrateurId;
     }
 
     public void setAdministrateurId(int id) {
-        this.AdministrateurId = id;
+        this.administrateurId = id;
     }
 
     public String getNom() {

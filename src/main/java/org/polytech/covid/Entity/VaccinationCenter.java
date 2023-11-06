@@ -17,6 +17,7 @@ public class VaccinationCenter {
     @ManyToMany(targetEntity = SuperAdmin.class,mappedBy = "vaccinationCenterList")
     private List<SuperAdmin> superAdminList;
 
+
     public VaccinationCenter(int id, String name, String adresse, String city, List<SuperAdmin> superAdminList) {
         this.id = id;
         this.name = name;
