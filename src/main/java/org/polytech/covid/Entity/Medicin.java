@@ -1,14 +1,13 @@
 package org.polytech.covid.Entity;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 import java.util.List;
 
 public class Medicin {
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "medicin_id")
+    @SequenceGenerator(name = "medicin_id", sequenceName = "medicin_id_seq",allocationSize = 1)
     private int id;
     private String nom;
     private String prenom;

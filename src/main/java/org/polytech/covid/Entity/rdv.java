@@ -1,9 +1,6 @@
 package org.polytech.covid.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -11,7 +8,8 @@ import java.util.Date;
 @Entity
 public class rdv {
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rdv_id")
+    @SequenceGenerator(name = "rdv_id", sequenceName = "rdv_id_seq",allocationSize = 1)
     private int id;
     private String nom;
     private String prenom;

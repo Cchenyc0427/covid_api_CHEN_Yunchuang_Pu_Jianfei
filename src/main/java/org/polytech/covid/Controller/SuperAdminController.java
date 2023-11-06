@@ -27,7 +27,7 @@ public class SuperAdminController {
     }
     @PostMapping("api/superAdmin/center")
     public VaccinationCenter addVaccinationCenter(
-            @RequestParam(name="vaccinationCenter")VaccinationCenter vaccinationCenter){
+            @RequestBody VaccinationCenter vaccinationCenter){
         return superAdminVaccinationCenterService.addVaccinationCenter(vaccinationCenter);
     }
     @PutMapping ("api/superAdmin/center")

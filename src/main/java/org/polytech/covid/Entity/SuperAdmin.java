@@ -8,7 +8,8 @@ import java.util.List;
 @Entity
 public class SuperAdmin {
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "super_admin_id")
+    @SequenceGenerator(name = "super_admin_id", sequenceName = "super_admin_id_seq",allocationSize = 1)
     private int id;
     private String nom;
     private String prenom;

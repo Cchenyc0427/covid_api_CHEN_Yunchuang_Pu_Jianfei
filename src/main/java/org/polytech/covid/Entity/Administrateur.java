@@ -1,14 +1,13 @@
 package org.polytech.covid.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Table
 @Entity
 public class Administrateur {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "administrateur_id")
+    @SequenceGenerator(name = "administrateur_id", sequenceName = "administrateur_id_seq",allocationSize = 1)
     private Integer AdministrateurId;
     private String nom;
     private String prenom;

@@ -5,10 +5,11 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Table
-@Entity
+@Entity(name = "vaccination_center")
 public class VaccinationCenter {
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "center_id")
+    @SequenceGenerator(name = "center_id", sequenceName = "vaccination_center_id_seq",allocationSize = 1)
     private int id;
     private String name;
     private String adresse;
