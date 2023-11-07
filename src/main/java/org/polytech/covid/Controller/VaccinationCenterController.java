@@ -17,10 +17,7 @@ public class VaccinationCenterController {
 
     @GetMapping(path ="/api/centers")
     public List<VaccinationCenter> get(@RequestParam(name="city",required = false)String city){
-        if(city==null){
-            return centerService.findAll();
-        }
-        return centerService.findAllByCityIgnoreCase(city);
+        return centerService.findAllByCityContainingIgnoreCase(city);
 
     }
     @PostMapping(path = "/api/centers")

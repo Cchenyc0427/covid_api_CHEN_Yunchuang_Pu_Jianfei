@@ -18,12 +18,31 @@ public class VaccinationCenter {
     private List<SuperAdmin> superAdminList;
 
 
+    public VaccinationCenter() {
+    }
+
     public VaccinationCenter(int id, String name, String adresse, String city, List<SuperAdmin> superAdminList) {
         this.id = id;
         this.name = name;
         this.adresse = adresse;
         this.city = city;
         this.superAdminList = superAdminList;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAdresse() {
@@ -34,47 +53,19 @@ public class VaccinationCenter {
         this.adresse = adresse;
     }
 
-    public List<SuperAdmin> getSuperAdminList() {
-        return superAdminList;
-    }
-
-    public void setSuperAdminList(List<SuperAdmin> superAdminList) {
-        this.superAdminList = superAdminList;
-    }
-
-    public VaccinationCenter() {
-
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAdress(String adress) {
-        this.adresse = adress;
+    public String getCity() {
+        return city;
     }
 
     public void setCity(String city) {
         this.city = city;
     }
 
-    public int getId() {
-        return id;
+    public List<SuperAdmin> getSuperAdminList() {
+        return superAdminList;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getAdress() {
-        return adresse;
-    }
-
-    public String getCity() {
-        return city;
+    public void setSuperAdminList(List<SuperAdmin> superAdminList) {
+        this.superAdminList = superAdminList;
     }
 }

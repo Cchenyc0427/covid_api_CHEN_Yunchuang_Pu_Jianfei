@@ -16,9 +16,8 @@ public class VaccinationCenterService{
     public VaccinationCenterService(VaccinationCenterRespository vaccinationCenterRespository) {
         this.vaccinationCenterRespository = vaccinationCenterRespository;
     }
-
-    public List<VaccinationCenter> findAllByCityIgnoreCase(String cityName) {
-        return vaccinationCenterRespository.findAllByCityIgnoreCase(cityName);
+    public List<VaccinationCenter> findAllByCityContainingIgnoreCase(String name) {
+        return vaccinationCenterRespository.findAllByCityContainingIgnoreCase(name);
     }
 
     public List<VaccinationCenter> findAll() {

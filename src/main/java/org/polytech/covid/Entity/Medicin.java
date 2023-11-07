@@ -2,8 +2,10 @@ package org.polytech.covid.Entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
-
+@Table
+@Entity
 public class Medicin {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "medicin_id")
@@ -16,8 +18,8 @@ public class Medicin {
 
     private String password;
 
-    @OneToMany(targetEntity = rdv.class)
-    List<rdv> rdvList;
+    @OneToMany(mappedBy = "medicin", cascade = CascadeType.ALL)
+    private List<rdv> rdvList = new ArrayList<>();
 
 
     public Medicin(int id, String nom, String prenom, String mail, String telephone, String password, List<rdv> rdvList) {
@@ -28,6 +30,10 @@ public class Medicin {
         this.telephone = telephone;
         this.password = password;
         this.rdvList = rdvList;
+    }
+
+    public Medicin() {
+
     }
 
     public List<rdv> getRdvList() {
