@@ -5,6 +5,8 @@ import org.polytech.covid.repository.SuperAdminPourVacinationCenterRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SuperAdminVaccinationCenterService {
 
@@ -15,8 +17,11 @@ public class SuperAdminVaccinationCenterService {
         this.superAdminPourVacinationCenterRespository = superAdminPourVacinationCenterRespository;
     }
 
-    public VaccinationCenter findByName(String cityName){
-        return superAdminPourVacinationCenterRespository.findByName(cityName);
+    public VaccinationCenter findByNameIgnoreCase(String cityName){
+        return superAdminPourVacinationCenterRespository.findByNameIgnoreCase(cityName);
+    }
+    public List<VaccinationCenter> findAll(){
+        return superAdminPourVacinationCenterRespository.findAll();
     }
     public VaccinationCenter addVaccinationCenter(VaccinationCenter center){
         return superAdminPourVacinationCenterRespository.saveAndFlush(center);

@@ -7,7 +7,7 @@ public interface SuperAdminPourVacinationCenterRespository extends JpaRepository
 
     public void deleteById(Integer id);
 
-    public VaccinationCenter findByName(String name);
+    public VaccinationCenter findByNameIgnoreCase(String name);
 
 
 }

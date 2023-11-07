@@ -18,9 +18,17 @@ public class SuperAdminController {
     @Autowired
     private SuperAdminAdministrateurService superAdminAdministrateurService;
 
-    @GetMapping("api/superAdmin/center")
+    @GetMapping("api/superAdmin/center/name")
     public VaccinationCenter getByName(@RequestParam(name="name")String centreName){
-        return superAdminVaccinationCenterService.findByName(centreName);
+        if(superAdminVaccinationCenterService.findByNameIgnoreCase(centreName)==null){
+            System.out.println("Il n'y a pas ce center");
+
+        }
+            return superAdminVaccinationCenterService.findByNameIgnoreCase(centreName);
+    }
+    @GetMapping("api/superAdmin/center")
+    public List<VaccinationCenter> getAll(){
+        return superAdminVaccinationCenterService.findAll();
     }
     @DeleteMapping("api/superAdmin/center")
     public void deleteById(@RequestParam(name="id")Integer id){
