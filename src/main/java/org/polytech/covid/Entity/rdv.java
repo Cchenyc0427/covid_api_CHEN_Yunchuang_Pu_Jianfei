@@ -36,17 +36,6 @@ public class rdv {
     private Medicin medicin;
 
 
-    public rdv() {
-    }
-
-    public rdv(int id, String nom, String prenom, String mail, String telephone, Date rdvTime) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.mail = mail;
-        this.telephone = telephone;
-        this.rdvTime = rdvTime;
-    }
 
     public int getId() {
         return id;
