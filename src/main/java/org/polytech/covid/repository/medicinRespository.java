@@ -3,6 +3,8 @@ package org.polytech.covid.repository;
 import org.polytech.covid.Entity.Medicin;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface medicinRespository extends JpaRepository<Medicin,Integer> {
+import java.util.Optional;
 
+public interface medicinRespository extends JpaRepository<Medicin,Integer> {
+    public Optional<Medicin> findById(Integer id);
 }

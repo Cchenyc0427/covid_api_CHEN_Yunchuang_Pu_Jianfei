@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VaccinationCenterService{
@@ -18,6 +19,9 @@ public class VaccinationCenterService{
     }
     public List<VaccinationCenter> findAllByCityContainingIgnoreCase(String name) {
         return vaccinationCenterRespository.findAllByCityContainingIgnoreCase(name);
+    }
+    public Optional<VaccinationCenter> findById(Integer id){
+        return vaccinationCenterRespository.findById(id);
     }
 
     public List<VaccinationCenter> findAll() {

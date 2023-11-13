@@ -2,6 +2,7 @@ package org.polytech.covid.Controller;
 
 import jakarta.transaction.Transactional;
 import org.polytech.covid.Entity.rdv;
+import org.polytech.covid.Service.VaccinationCenterService;
 import org.polytech.covid.Service.rdvService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,8 @@ public class rdvController {
     @Autowired
     private rdvService rdvService;
 
+    @Autowired
+    private VaccinationCenterService VaccinationCenterService;
 
     @GetMapping("api/rdv/name")
     public rdv getByName(@RequestParam(name = "name")String patientName){
@@ -34,7 +37,7 @@ public class rdvController {
 
 
     @PostMapping("api/rdv")
-    public rdv addRdv(@RequestBody rdv rdv ){
+    public rdv addRdv(@RequestBody rdv rdv){
         return rdvService.addRDV(rdv);
     }
     @DeleteMapping("api/rdv")

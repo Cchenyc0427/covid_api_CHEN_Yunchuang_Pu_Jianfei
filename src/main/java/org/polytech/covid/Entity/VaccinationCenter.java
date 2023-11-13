@@ -2,6 +2,7 @@ package org.polytech.covid.Entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Table
@@ -16,6 +17,9 @@ public class VaccinationCenter {
     private String city;
     @ManyToMany(targetEntity = SuperAdmin.class,mappedBy = "vaccinationCenterList")
     private List<SuperAdmin> superAdminList;
+
+    @OneToMany(mappedBy = "vaccinationCenter", cascade = CascadeType.ALL)
+    private List<rdv> rdvList = new ArrayList<>();
 
 
     public VaccinationCenter() {

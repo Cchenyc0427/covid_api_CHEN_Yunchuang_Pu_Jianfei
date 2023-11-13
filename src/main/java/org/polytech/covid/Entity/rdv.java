@@ -19,21 +19,29 @@ public class rdv {
     private Date rdvTime;
     public rdv() {
     }
+    @ManyToOne
+    @JoinColumn(name="vaccination_center_id")
+    private VaccinationCenter vaccinationCenter;
 
-    public rdv(int id, String nom, String prenom, String mail, String telephone, Date rdvTime) {
+
+    public rdv(int id, String nom, String prenom, String mail, String telephone, Date rdvTime, VaccinationCenter vaccinationCenter) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.mail = mail;
         this.telephone = telephone;
         this.rdvTime = rdvTime;
+        this.vaccinationCenter = vaccinationCenter;
     }
 
+    public VaccinationCenter getVaccinationCenter() {
+        return vaccinationCenter;
+    }
 
+    public void setVaccinationCenter(VaccinationCenter vaccinationCenter) {
+        this.vaccinationCenter = vaccinationCenter;
+    }
 
-    @ManyToOne
-    @JoinColumn(name="medicin_id")
-    private Medicin medicin;
 
 
 
