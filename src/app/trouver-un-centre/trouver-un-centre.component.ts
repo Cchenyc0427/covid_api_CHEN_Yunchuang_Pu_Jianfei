@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {MockService} from "../mock.service";
+import {Component} from '@angular/core';
 import {VaccinationCenter} from "./VaccinationCenter";
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-trouver-un-centre',
@@ -13,10 +12,13 @@ export class TrouverUnCentreComponent {
   userInput: string = '';
 
 
-  constructor(private mockService: MockService) {};
+  constructor(private dataService: DataService) {};
 
   fetchCenterByCity() {
-    this._centerData = this.mockService.getCenterByCityName(this.userInput);
+    this.dataService.getCentersByCityName(this.userInput).subscribe((respose) => {
+      this._centerData = respose;
+      this.dataService.changeMessage(this._centerData );
+    });
   }
 
   handleCenterClick(item: number) {

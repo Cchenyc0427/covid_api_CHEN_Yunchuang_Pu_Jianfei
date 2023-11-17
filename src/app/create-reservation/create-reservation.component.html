@@ -1,19 +1,11 @@
-<!Doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>create-reservation</title>
-  <link rel="stylesheet" href="./create-reservation.component.less">
-</head>
-<body>
+<div *ngIf="centerData">
 <div class="page-title">
   <button class="back-button" routerLink="/trouver-center"><span nz-icon nzType="arrow-left" nzTheme="outline"></span></button>
   <h1>Prise de rendez-vous vaccination</h1>
 </div>
 <div class="center-information-box">
   <p>{{centerData.name}}</p>
-  <p>{{centerData.address}}, {{centerData.cityName}}</p>
+  <p>{{centerData.adresse}}, {{centerData.city}}</p>
 </div>
 
 <div class="input-group">
@@ -24,6 +16,10 @@
   <div class="nom-group">
     <p>Nom</p>
     <input nz-input placeholder="Votre Nom" [(ngModel)]="nom" type="text" />
+  </div>
+  <div class="telephone-group">
+    <p>Téléphone</p>
+    <input nz-input placeholder="Votre téléphone" [(ngModel)]="telephone" type="text" />
   </div>
   <div class="email-group">
     <p>Email</p>
@@ -37,7 +33,4 @@
     <button nz-button nzType="primary" nzShape="round" (click)="createReservation()">Réserver</button>
   </div>
 </div>
-
-</body>
-</html>
-
+</div>

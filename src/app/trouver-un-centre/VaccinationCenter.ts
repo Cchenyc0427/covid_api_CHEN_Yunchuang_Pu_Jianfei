@@ -1,6 +1,6 @@
 export interface VaccinationCenter {
   id: number,
   name: string,
-  address: string,
-  cityName: string,
+  adresse: string,
+  city: string,
 }
