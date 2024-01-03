@@ -1,5 +1,6 @@
 package org.polytech.covid.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ public class VaccinationCenter {
     private List<SuperAdmin> superAdminList;
 
     @OneToMany(mappedBy = "vaccinationCenter", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<rdv> rdvList = new ArrayList<>();
 
     public VaccinationCenter() {
