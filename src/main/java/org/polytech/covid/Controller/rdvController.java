@@ -47,6 +47,7 @@ public class rdvController {
     }
     @PutMapping("api/rdv")
     public rdv updateRdv(@RequestBody rdv rdv ){
+
         return rdvService.updateRdv(rdv);
     }
 }

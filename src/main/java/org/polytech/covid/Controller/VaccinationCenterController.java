@@ -1,14 +1,13 @@
 package org.polytech.covid.Controller;
 
+import org.polytech.covid.Entity.Administrateur;
 import org.polytech.covid.Entity.VaccinationCenter;
 import org.polytech.covid.Service.VaccinationCenterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class VaccinationCenterController {
@@ -24,6 +23,11 @@ public class VaccinationCenterController {
     public List<VaccinationCenter> getAll(){
         return centerService.findAll();
     }
+    @GetMapping(path = "api/centers/id")
+    public Optional<VaccinationCenter> getById(@RequestParam(name="id",required = false)Integer id){
+        return centerService.findById(id);
+    }
+
 
 
 }
