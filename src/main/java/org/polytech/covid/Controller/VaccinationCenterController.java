@@ -20,7 +20,7 @@ public class VaccinationCenterController {
         return centerService.findAllByCityContainingIgnoreCase(city);
 
     }
-    @PostMapping(path = "/api/centers")
+    @GetMapping(path = "/api/centers/getAll")
     public List<VaccinationCenter> getAll(){
         return centerService.findAll();
     }
