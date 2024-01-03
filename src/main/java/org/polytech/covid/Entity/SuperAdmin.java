@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Table(name = "superAdmin")
 @Entity(name = "superAdmin")
 public class SuperAdmin {
