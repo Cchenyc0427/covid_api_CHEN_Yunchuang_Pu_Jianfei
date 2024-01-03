@@ -1,16 +1,14 @@
 package org.polytech.covid.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
 
 import java.util.List;
 
 
 
-@Table(name = "superAdmin")
-@Entity(name = "superAdmin")
+@Table
+@Entity
 public class SuperAdmin {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "super_admin_id")

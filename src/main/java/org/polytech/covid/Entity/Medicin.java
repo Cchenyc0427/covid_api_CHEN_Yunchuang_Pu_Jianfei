@@ -3,8 +3,8 @@ package org.polytech.covid.Entity;
 import jakarta.persistence.*;
 
 
-@Table(name = "medicin")
-@Entity(name = "medicin")
+@Table
+@Entity
 public class Medicin {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "medicin_id")

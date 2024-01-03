@@ -1,16 +1,13 @@
 package org.polytech.covid.Entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-@Table(name = "vaccinationCenter")
-@Entity(name = "vaccinationCenter")
+@Table
+@Entity
 public class VaccinationCenter {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "center_id")

@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 
-@Table(name = "rdv")
-@Entity(name = "rdv")
+@Table
+@Entity
 public class rdv {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rdv_id")
