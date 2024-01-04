@@ -19,6 +19,9 @@ public class SuperAdminAdministrateurService {
     public Administrateur addAdministrateur(Administrateur administrateur){
         return superAdminPourAdministrateurRespository.save(administrateur);
     }
+    public Administrateur findAdministrateurByMail(String mail){
+        return superAdminPourAdministrateurRespository.findAdministrateurByMail(mail);
+    }
 
     public Administrateur findAdministrateurById(Integer id){
         return superAdminPourAdministrateurRespository.findByAdministrateurId(id);

@@ -34,6 +34,10 @@ public class medicinService {
         return medicinRespository.saveAndFlush(medicin);
     }
 
+    public Medicin findMedicinByMail(String mail){
+        return medicinRespository.findMedicinByMail(mail);
+    }
+
 
 
 

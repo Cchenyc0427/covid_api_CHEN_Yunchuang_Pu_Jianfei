@@ -2,13 +2,17 @@ package org.polytech.covid.Controller;
 
 import jakarta.transaction.Transactional;
 import org.polytech.covid.Entity.Administrateur;
+import org.polytech.covid.Entity.SuperAdmin;
 import org.polytech.covid.Entity.VaccinationCenter;
 import org.polytech.covid.Service.SuperAdminAdministrateurService;
+import org.polytech.covid.Service.SuperAdminService;
 import org.polytech.covid.Service.SuperAdminVaccinationCenterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class SuperAdminController {
@@ -17,6 +21,9 @@ public class SuperAdminController {
 
     @Autowired
     private SuperAdminAdministrateurService superAdminAdministrateurService;
+
+    @Autowired
+    private SuperAdminService superAdminService;
 
     @GetMapping("api/superAdmin/center/name")
     public VaccinationCenter getByName(@RequestParam(name="name")String centreName){
@@ -73,7 +80,30 @@ public class SuperAdminController {
     public Administrateur updateAdministrateur(@RequestBody Administrateur administrateur){
         return superAdminAdministrateurService.updateAdministrateur(administrateur);
     }
+    @GetMapping("api/superAdmin/login")
+    public Boolean loginSuperAdmin(@RequestParam(name = "mail")String mail,@RequestParam(name = "password") String password){
+        Optional<SuperAdmin> superAdminOptional = superAdminService.findSuperAdminByMail(mail);
+        SuperAdmin superAdmin = superAdminOptional.orElse(null);
+        if(superAdmin==null){
+            return false;
+        } else if (!superAdmin.getPassword().equals(password)) {
+            return false;
+        }else{
+            return true;
+        }
 
+    }
+    @GetMapping("api/admin/login")
+    public Boolean loginAdmin(@RequestParam(name = "mail")String mail,@RequestParam(name = "password")String password){
+        Administrateur administrateur = superAdminAdministrateurService.findAdministrateurByMail(mail);
+        if(administrateur==null){
+            return false;
+        }else if(!administrateur.getPassword().equals(password)){
+            return false;
+        }else{
+            return true;
+        }
+    }
 
 
 
