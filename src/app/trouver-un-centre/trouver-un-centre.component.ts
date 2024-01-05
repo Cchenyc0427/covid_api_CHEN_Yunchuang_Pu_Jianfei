@@ -15,7 +15,8 @@ export class TrouverUnCentreComponent {
   constructor(private dataService: DataService) {};
 
   fetchCenterByCity() {
-    this.dataService.getCentersByCityName(this.userInput).subscribe((respose) => {
+    this.dataService.getCentersByCityName(this.userInput
+    ).subscribe((respose) => {
       this._centerData = respose;
       this.dataService.changeMessage(this._centerData );
     });

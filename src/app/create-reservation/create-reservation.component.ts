@@ -20,8 +20,13 @@ export class CreateReservationComponent{
 
   constructor(private route: ActivatedRoute, private Router: Router, private dataService: DataService) {
     this.centerId = this.route.snapshot.paramMap.get('id') || '';
+    //console.log('---------------------------',this.centerId, typeof this.centerId);
     this.dataService.currentMessage.subscribe(message => {
-      this.centerData=message[this.centerId];
+     message.forEach((item: any) => {
+       if(item.id === parseInt(this.centerId)) {
+         this.centerData = item;
+       }
+     })
     });
   }
 
@@ -40,28 +45,28 @@ export class CreateReservationComponent{
 
   createReservation(){
     const rdvData = `{
-        "nom": ${this.nom},
-        "prenom": ${this.prenom},
-        "mail": ${this.email},
-        "telephone": ${this.telephone},
-        "rdvTime": ${this.formatDate(this.date)},
+        "nom": "${this.nom}",
+        "prenom": "${this.prenom}",
+        "mail": "${this.email}",
+        "telephone": "${this.telephone}",
+        "rdvTime": "${this.formatDate(this.date)}",
         "vaccinationCenter": {
-            "id": 3,
-            "name": ${this.centerData?.name},
-            "city": ${this.centerData?.city},
-            "adresse": ${this.centerData?.adresse},
-        },
+            "id": ${this.centerId},
+            "name": "${this.centerData?.name}",
+            "city": "${this.centerData?.city}",
+            "adresse": "${this.centerData?.adresse}"
+        }
     }`;
 
-    // console.log('-----------------',rdvData);
+    //console.log('-----------------',rdvData);
 
-    this.dataService.createReservation(rdvData).then(() => {
+    this.dataService.createReservation(rdvData).subscribe ((response) => {
       this.Router.navigate(['reservation-success']);
-    }).catch((errInfo) => {
+      console.log('POST request successful:', response);
+    }),
+      (errInfo: any) => {
       console.error(errInfo);
       this.Router.navigate(['reservation-failed']);
-    });
+    };
   }
-
-
 }

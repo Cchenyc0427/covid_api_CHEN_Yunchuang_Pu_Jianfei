@@ -10,8 +10,11 @@ import {AdminCentersComponent} from "./admin-centers/admin-centers.component";
 import {AdminMonCentersComponent} from "./admin-mon-centers/admin-mon-centers.component";
 import {AdminPlanningComponent} from "./admin-planning/admin-planning.component";
 import {AdminConfigComponent} from "./admin-config/admin-config.component";
+import {HomePageComponent} from "./home-page/home-page.component";
 
 const routes: Routes = [
+  { path: '', redirectTo:"/home-page", pathMatch: 'full' },
+  { path: "home-page", component: HomePageComponent },
   { path: "trouver-center", component: TrouverUnCentreComponent},
   { path: "conformer-reservation/:id", component: CreateReservationComponent},
   { path: "reservation-success", component: ReservationSuccessComponent},

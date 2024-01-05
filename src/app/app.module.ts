@@ -27,6 +27,7 @@ import { AdminCentersComponent } from './admin-centers/admin-centers.component';
 import { AdminMonCentersComponent } from './admin-mon-centers/admin-mon-centers.component';
 import { AdminPlanningComponent } from './admin-planning/admin-planning.component';
 import { AdminConfigComponent } from './admin-config/admin-config.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 registerLocaleData(zh);
 
@@ -43,7 +44,8 @@ registerLocaleData(zh);
     AdminCentersComponent,
     AdminMonCentersComponent,
     AdminPlanningComponent,
-    AdminConfigComponent
+    AdminConfigComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
