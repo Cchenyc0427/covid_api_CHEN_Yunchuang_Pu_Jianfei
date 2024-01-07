@@ -11,6 +11,7 @@ import {AdminMonCentersComponent} from "./admin-mon-centers/admin-mon-centers.co
 import {AdminPlanningComponent} from "./admin-planning/admin-planning.component";
 import {AdminConfigComponent} from "./admin-config/admin-config.component";
 import {HomePageComponent} from "./home-page/home-page.component";
+import {EditCenterComponent} from "./edit-center/edit-center.component";
 
 const routes: Routes = [
   { path: '', redirectTo:"/home-page", pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: "admin-mon-centers", component: AdminMonCentersComponent},
   { path: "admin-planning", component: AdminPlanningComponent},
   { path: "admin-config", component: AdminConfigComponent},
+  { path: "edit-center", component: EditCenterComponent },
 ];
 
 @NgModule({

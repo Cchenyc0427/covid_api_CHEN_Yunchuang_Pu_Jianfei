@@ -28,6 +28,7 @@ import { AdminMonCentersComponent } from './admin-mon-centers/admin-mon-centers.
 import { AdminPlanningComponent } from './admin-planning/admin-planning.component';
 import { AdminConfigComponent } from './admin-config/admin-config.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { EditCenterComponent } from './edit-center/edit-center.component';
 
 registerLocaleData(zh);
 
@@ -45,7 +46,8 @@ registerLocaleData(zh);
     AdminMonCentersComponent,
     AdminPlanningComponent,
     AdminConfigComponent,
-    HomePageComponent
+    HomePageComponent,
+    EditCenterComponent
   ],
   imports: [
     BrowserModule,
