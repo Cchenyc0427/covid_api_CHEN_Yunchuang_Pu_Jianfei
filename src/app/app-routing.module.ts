@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: "admin-mon-centers", component: AdminMonCentersComponent},
   { path: "admin-planning", component: AdminPlanningComponent},
   { path: "admin-config", component: AdminConfigComponent},
-  { path: "edit-center", component: EditCenterComponent },
+  { path: "edit-center/:id", component: EditCenterComponent },
 ];
 
 @NgModule({

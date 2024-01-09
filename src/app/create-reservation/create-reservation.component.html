@@ -1,36 +1,37 @@
 <div *ngIf="centerData">
-<div class="page-title">
-  <button class="back-button" routerLink="/trouver-center"><span nz-icon nzType="arrow-left" nzTheme="outline"></span></button>
-  <h1>Prise de rendez-vous vaccination</h1>
-</div>
-<div class="center-information-box">
-  <p>{{centerData.name}}</p>
-  <p>{{centerData.adresse}}, {{centerData.city}}</p>
-</div>
+    <div class="page-title">
+        <button class="back-button" routerLink="/trouver-center"><span nz-icon nzType="arrow-left"
+                                                                       nzTheme="outline"></span></button>
+        <h1>Prise de rendez-vous vaccination</h1>
+    </div>
+    <div class="center-information-box">
+        <p>{{centerData.name}}</p>
+        <p>{{centerData.adresse}}, {{centerData.city}}</p>
+    </div>
 
-<div class="input-group">
-  <div class="prenom-group">
-    <p>Prénom</p>
-    <input nz-input placeholder="Votre Prénom" [(ngModel)]="prenom" type="text" />
-  </div>
-  <div class="nom-group">
-    <p>Nom</p>
-    <input nz-input placeholder="Votre Nom" [(ngModel)]="nom" type="text" />
-  </div>
-  <div class="telephone-group">
-    <p>Téléphone</p>
-    <input nz-input placeholder="Votre téléphone" [(ngModel)]="telephone" type="text" />
-  </div>
-  <div class="email-group">
-    <p>Email</p>
-    <input nz-input placeholder="Votre address email" [(ngModel)]="email" type="text" />
-  </div>
-  <div class="date-group">
-    <p>Date du rendez-vous</p>
-    <nz-date-picker [(ngModel)]="date" />
-  </div>
-  <div class="reservation-button">
-    <button nz-button nzType="primary" nzShape="round" (click)="createReservation()">Réserver</button>
-  </div>
-</div>
+    <div class="input-group">
+        <div class="prenom-group">
+            <p>Prénom</p>
+            <input nz-input placeholder="Votre Prénom" [(ngModel)]="prenom" type="text"/>
+        </div>
+        <div class="nom-group">
+            <p>Nom</p>
+            <input nz-input placeholder="Votre Nom" [(ngModel)]="nom" type="text"/>
+        </div>
+        <div class="telephone-group">
+            <p>Téléphone</p>
+            <input nz-input placeholder="Votre téléphone" [(ngModel)]="telephone" type="text"/>
+        </div>
+        <div class="email-group">
+            <p>Email</p>
+            <input nz-input placeholder="Votre address email" [(ngModel)]="email" type="text"/>
+        </div>
+        <div class="date-group">
+            <p>Date du rendez-vous</p>
+            <nz-date-picker [(ngModel)]="date"/>
+        </div>
+        <div class="reservation-button">
+            <button nz-button nzType="primary" nzShape="round" (click)="createReservation()">Réserver</button>
+        </div>
+    </div>
 </div>

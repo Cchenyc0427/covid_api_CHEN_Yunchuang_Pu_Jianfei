@@ -19,6 +19,8 @@ export class DataService {
 
   private createRdvUrl = "http://localhost:4200/api/rdv";
 
+  private updateCenterUrl = "http://localhost:4200/api/superAdmin/center"
+
   constructor(private http: HttpClient) {
   }
 
@@ -35,4 +37,9 @@ export class DataService {
 
     return this.http.post<any>(`${this.createRdvUrl}`, rdvData, httpOptions);
   }
+
+  updateCenters(centerData: any) {
+    return this.http.put(this.updateCenterUrl, centerData);
+  }
+
 }
