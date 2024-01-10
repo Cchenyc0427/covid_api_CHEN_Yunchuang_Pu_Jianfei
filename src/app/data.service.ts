@@ -12,7 +12,7 @@ export class DataService {
 
   changeMessage(message: any) {
     this.dataSource.next(message);
-    console.log('-------------------currentMessage',this.currentMessage);
+    // console.log('-------------------currentMessage',this.currentMessage);
   }
 
   private trouveCentersUrl = 'http://localhost:4200/api/centers?city=';

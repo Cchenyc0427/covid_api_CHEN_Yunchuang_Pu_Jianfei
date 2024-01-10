@@ -77,13 +77,13 @@ export class EditAdminstrateurComponent {
   }>;
 
   submitForm(): void {
-    const editCenterData = {
-      "id": this.administrateurId,
+    const editAdministrateurData = {
+      "administrateurId": this.administrateurId,
       ...this.validateForm.value
     }
-    // console.log('---------------------',editCenterData);
+    // console.log('---------------------',editAdministrateurData);
 
-    this.dataService.updateAdministrateur(editCenterData).subscribe((response) => {
+    this.dataService.updateAdministrateur(editAdministrateurData).subscribe((response) => {
       this.Router.navigate(['reservation-success']);
       console.log('Update administrateur request successful:', response);
     }),
@@ -104,7 +104,7 @@ export class EditAdminstrateurComponent {
     this.dataService.currentMessage.subscribe(message => {
       message.forEach((item: any) => {
         if (item.administrateurId === parseInt(this.administrateurId)) {
-          console.log(item.nom);
+          // console.log(item.nom);
           this.administrateurData = item;
         }
       })

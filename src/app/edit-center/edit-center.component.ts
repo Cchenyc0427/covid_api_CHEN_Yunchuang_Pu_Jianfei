@@ -63,7 +63,7 @@ export class EditCenterComponent {
       "id": this.centerId,
       ...this.validateForm.value
     }
-    // console.log('---------------------',editCenterData);
+    console.log('---------------------',editCenterData);
 
     this.dataService.updateCenters(editCenterData).subscribe((response) => {
       this.Router.navigate(['reservation-success']);
