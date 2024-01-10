@@ -33,6 +33,6 @@ public class SuperAdminAdministrateurService {
        superAdminPourAdministrateurRespository.deleteByAdministrateurId(administrateurId);
     }
     public Administrateur updateAdministrateur(Administrateur administrateur){
-        return superAdminPourAdministrateurRespository.saveAndFlush(administrateur);
+        return superAdminPourAdministrateurRespository.save(administrateur);
     }
 }
