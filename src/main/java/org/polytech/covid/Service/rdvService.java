@@ -36,7 +36,7 @@ public class rdvService{
     }
 
     public rdv updateRdv(rdv rdv){
-        return rdvRespository.save(rdv);
+        return rdvRespository.saveAndFlush(rdv);
     }
 
 
