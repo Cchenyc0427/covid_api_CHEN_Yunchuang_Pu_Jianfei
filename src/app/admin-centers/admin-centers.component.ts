@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {VaccinationCenter} from "../trouver-un-centre/VaccinationCenter";
 import {DataService} from "../data.service";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-admin-centers',
@@ -29,6 +31,9 @@ import {DataService} from "../data.service";
                                       class="">
                                   Edit
                               </button>
+                              <button nz-button nzType="primary" (click)="deleteCenterById(item.id)">
+                                  Delete
+                              </button>
                           </div>
                       </li>
                   </ul>
@@ -44,8 +49,18 @@ export class AdminCentersComponent {
   _centerData: VaccinationCenter[] = [];
   userInput: string = '';
 
+  constructor(private dataService: DataService, private Router: Router) {};
 
-  constructor(private dataService: DataService) {};
+  deleteCenterById(id: number) {
+    this.dataService.deleteCenters(id).subscribe((response) => {
+      this.Router.navigate(['reservation-success']);
+      console.log('PUT request successful:', response);
+    }),
+      (errInfo: any) => {
+        console.error(errInfo);
+        this.Router.navigate(['reservation-failed']);
+      };
+}
 
   fetchCenterByCity() {
     this.dataService.getCentersByCityName(this.userInput

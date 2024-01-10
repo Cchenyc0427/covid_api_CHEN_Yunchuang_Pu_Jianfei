@@ -22,7 +22,8 @@ export class CreateReservationComponent{
     this.centerId = this.route.snapshot.paramMap.get('id') || '';
     //console.log('---------------------------',this.centerId, typeof this.centerId);
     this.dataService.currentMessage.subscribe(message => {
-     message.forEach((item: any) => {
+      // console.log(message);
+      message.forEach((item: any) => {
        if(item.id === parseInt(this.centerId)) {
          this.centerData = item;
        }

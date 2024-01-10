@@ -24,11 +24,14 @@ import { SuperAdminComponent } from './super-admin/super-admin.component';
 import fr from '@angular/common/locales/fr';
 import { MenuLeftComponent } from './menu-left/menu-left.component';
 import { AdminCentersComponent } from './admin-centers/admin-centers.component';
-import { AdminMonCentersComponent } from './admin-mon-centers/admin-mon-centers.component';
-import { AdminPlanningComponent } from './admin-planning/admin-planning.component';
-import { AdminConfigComponent } from './admin-config/admin-config.component';
+import { CreateCenterComponent } from './create-center/create-center.component';
+import { AdminAdministrateurComponent } from './admin-administrateur/admin-administrateur.component';
+import { CreateAdministrateurComponent } from './create-administrateur/create-administrateur.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { EditCenterComponent } from './edit-center/edit-center.component';
+import {NzTableModule} from "ng-zorro-antd/table";
+import {NzDividerModule} from "ng-zorro-antd/divider";
+import { EditAdminstrateurComponent } from './edit-adminstrateur/edit-adminstrateur.component';
 
 registerLocaleData(zh);
 
@@ -43,11 +46,12 @@ registerLocaleData(zh);
     SuperAdminComponent,
     MenuLeftComponent,
     AdminCentersComponent,
-    AdminMonCentersComponent,
-    AdminPlanningComponent,
-    AdminConfigComponent,
+    CreateCenterComponent,
+    AdminAdministrateurComponent,
+    CreateAdministrateurComponent,
     HomePageComponent,
-    EditCenterComponent
+    EditCenterComponent,
+    EditAdminstrateurComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +65,8 @@ registerLocaleData(zh);
     NzFormModule,
     ReactiveFormsModule,
     NzMenuModule,
+    NzTableModule,
+    NzDividerModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: zh_CN }

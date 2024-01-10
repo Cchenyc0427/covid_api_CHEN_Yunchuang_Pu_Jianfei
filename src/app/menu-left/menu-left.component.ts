@@ -2,24 +2,24 @@ import {Component, Input} from '@angular/core';
 
 
 @Component({
-  selector: 'nz-demo-menu-inline',
+  selector: ' nz-demo-menu-inline',
   template: `
     <ul nz-menu nzMode="inline">
       <li nz-menu-item nzTitle="Centers" [nzSelected]="select === 'centers'" >
         Centers
         <a [routerLink]="['/', 'admin-centers']"></a>
       </li>
-      <li nz-menu-item nzTitle="Mon centers" [nzSelected]="select === 'monCenters'" >
-        Mon centers
-        <a [routerLink]="['/', 'admin-mon-centers']"></a>
+      <li nz-menu-item nzTitle="Create centers" [nzSelected]="select === 'createCenter'" >
+        Create Center
+        <a [routerLink]="['/', 'create-center']"></a>
       </li>
-      <li nz-menu-item nzTitle="Planning" [nzSelected]="select === 'plan'" >
-        Planning
-        <a [routerLink]="['/', 'admin-planning']"></a>
+      <li nz-menu-item nzTitle="Administrateur" [nzSelected]="select === 'administrateur'" >
+        Administrateur
+        <a [routerLink]="['/', 'admin-administrateur']"></a>
       </li>
-      <li nz-menu-item nzTitle="Config" [nzSelected]="select === 'config'" >
-        Config
-        <a [routerLink]="['/', 'admin-config']"></a>
+      <li nz-menu-item nzTitle="Create Administrateur" [nzSelected]="select === 'createAdministrateur'" >
+        Create Administrateur
+        <a [routerLink]="['/', 'create-administrateur']"></a>
       </li>
     </ul>
   `,

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminMonCentersComponent } from './admin-mon-centers.component';
+import { CreateCenterComponent } from './create-center.component';
 
 describe('AdminMonCentersComponent', () => {
-  let component: AdminMonCentersComponent;
-  let fixture: ComponentFixture<AdminMonCentersComponent>;
+  let component: CreateCenterComponent;
+  let fixture: ComponentFixture<CreateCenterComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AdminMonCentersComponent]
+      declarations: [CreateCenterComponent]
     });
-    fixture = TestBed.createComponent(AdminMonCentersComponent);
+    fixture = TestBed.createComponent(CreateCenterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

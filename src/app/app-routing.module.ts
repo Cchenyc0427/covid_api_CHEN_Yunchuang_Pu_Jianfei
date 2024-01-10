@@ -7,11 +7,12 @@ import {ReservationFailedComponent} from "./reservation-failed/reservation-faile
 import {NzDemoFormHorizontalLoginComponent} from "./login/login.component";
 import {SuperAdminComponent} from "./super-admin/super-admin.component";
 import {AdminCentersComponent} from "./admin-centers/admin-centers.component";
-import {AdminMonCentersComponent} from "./admin-mon-centers/admin-mon-centers.component";
-import {AdminPlanningComponent} from "./admin-planning/admin-planning.component";
-import {AdminConfigComponent} from "./admin-config/admin-config.component";
+import {CreateCenterComponent} from "./create-center/create-center.component";
+import {AdminAdministrateurComponent} from "./admin-administrateur/admin-administrateur.component";
+import {CreateAdministrateurComponent} from "./create-administrateur/create-administrateur.component";
 import {HomePageComponent} from "./home-page/home-page.component";
 import {EditCenterComponent} from "./edit-center/edit-center.component";
+import {EditAdminstrateurComponent} from "./edit-adminstrateur/edit-adminstrateur.component";
 
 const routes: Routes = [
   { path: '', redirectTo:"/home-page", pathMatch: 'full' },
@@ -23,10 +24,11 @@ const routes: Routes = [
   { path: "login", component: NzDemoFormHorizontalLoginComponent},
   { path: "super-admin", component: SuperAdminComponent},
   { path: "admin-centers", component: AdminCentersComponent},
-  { path: "admin-mon-centers", component: AdminMonCentersComponent},
-  { path: "admin-planning", component: AdminPlanningComponent},
-  { path: "admin-config", component: AdminConfigComponent},
+  { path: "create-center", component: CreateCenterComponent},
+  { path: "admin-administrateur", component: AdminAdministrateurComponent},
+  { path: "create-administrateur", component: CreateAdministrateurComponent},
   { path: "edit-center/:id", component: EditCenterComponent },
+  { path: "edit-administrateur/:id", component: EditAdminstrateurComponent }
 ];
 
 @NgModule({

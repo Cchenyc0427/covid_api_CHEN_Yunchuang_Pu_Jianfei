@@ -12,14 +12,24 @@ export class DataService {
 
   changeMessage(message: any) {
     this.dataSource.next(message);
-    //console.log('-------------------currentMessage',this.currentMessage);
+    console.log('-------------------currentMessage',this.currentMessage);
   }
 
   private trouveCentersUrl = 'http://localhost:4200/api/centers?city=';
 
   private createRdvUrl = "http://localhost:4200/api/rdv";
 
-  private updateCenterUrl = "http://localhost:4200/api/superAdmin/center"
+  private updateCenterUrl = "http://localhost:4200/api/superAdmin/center";
+
+  private deleteCenterUrl = "http://localhost:4200/api/superAdmin/center?id=";
+
+  private searchAdministrateurUrl = "http://localhost:4200/api/superAdmin/administrateur";
+
+  private deleteAdministrateurUrl = "http://localhost:4200/api/superAdmin/administrateur?id=";
+
+  private updateAdministrateurUrl = "http://localhost:4200/api/superAdmin/administrateur";
+
+
 
   constructor(private http: HttpClient) {
   }
@@ -38,8 +48,32 @@ export class DataService {
     return this.http.post<any>(`${this.createRdvUrl}`, rdvData, httpOptions);
   }
 
+  createCenter(centerData: any){
+    return this.http.post(this.deleteCenterUrl, centerData);
+  }
+
   updateCenters(centerData: any) {
     return this.http.put(this.updateCenterUrl, centerData);
+  }
+
+  deleteCenters(centerId: number) {
+    return this.http.delete(this.deleteCenterUrl + centerId);
+  }
+
+  searchAdministrateur() {
+    return this.http.get(this.searchAdministrateurUrl);
+  }
+
+  deleteAdministrateur(administrateurId: number) {
+    return this.http.delete(this.deleteAdministrateurUrl + administrateurId);
+  }
+
+  updateAdministrateur(administrateurData: any) {
+    return this.http.put(this.updateAdministrateurUrl, administrateurData);
+  }
+
+  createAdministrateur(administrateurData: any){
+    return this.http.post(this.deleteAdministrateurUrl, administrateurData);
   }
 
 }
