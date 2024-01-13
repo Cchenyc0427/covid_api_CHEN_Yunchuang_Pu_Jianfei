@@ -33,6 +33,8 @@ export class DataService {
 
   private deleteMedicineUrl = "http://localhost:4200/api/medicin?id=";
 
+  private updateMedicineUrl = "http://localhost:4200/api/medicin";
+
 
   constructor(private http: HttpClient) {
   }
@@ -85,5 +87,13 @@ export class DataService {
 
   deleteMedicine(id: number) {
     return this.http.delete(this.deleteMedicineUrl + id);
+  }
+
+  updateMedicine(medicineData: any) {
+    return this.http.put(this.updateMedicineUrl, medicineData);
+  }
+
+  createMedicine(medicineData: any){
+    return this.http.post(this.deleteMedicineUrl, medicineData);
   }
 }
