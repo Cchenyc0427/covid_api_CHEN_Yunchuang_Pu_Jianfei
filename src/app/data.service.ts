@@ -29,6 +29,9 @@ export class DataService {
 
   private updateAdministrateurUrl = "http://localhost:4200/api/superAdmin/administrateur";
 
+  private searchMedicineUrl = "http://localhost:4200/api/medicin/findAll";
+
+  private deleteMedicineUrl = "http://localhost:4200/api/medicin?id=";
 
 
   constructor(private http: HttpClient) {
@@ -76,4 +79,11 @@ export class DataService {
     return this.http.post(this.deleteAdministrateurUrl, administrateurData);
   }
 
+  searchMedicine() {
+    return this.http.get(this.searchMedicineUrl);
+  }
+
+  deleteMedicine(id: number) {
+    return this.http.delete(this.deleteMedicineUrl + id);
+  }
 }

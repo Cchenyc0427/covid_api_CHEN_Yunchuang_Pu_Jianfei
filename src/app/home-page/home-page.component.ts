@@ -13,9 +13,6 @@ import {NzButtonSize} from 'ng-zorro-antd/button';
           <button (click)="handleOnClickAdminstrateur()" [className]="'administrateur-button'" nz-button [nzSize]="'large'" nzType="default" nzShape="round">
               Administrateur Login
           </button>
-          <button (click)="handleOnClickMedicine()" [className]="'medicine-button'" nz-button [nzSize]="'large'" nzType="default" nzShape="round">Medicine
-              Login
-          </button>
           <button (click)="handleOnClickRDV()" [className]="'rdv-button'" nz-button [nzSize]="'large'" nzType="default" nzShape="round">Créer un
               RDV
           </button>

@@ -13,9 +13,14 @@ import {CreateAdministrateurComponent} from "./create-administrateur/create-admi
 import {HomePageComponent} from "./home-page/home-page.component";
 import {EditCenterComponent} from "./edit-center/edit-center.component";
 import {EditAdminstrateurComponent} from "./edit-adminstrateur/edit-adminstrateur.component";
+import {AdministrateurComponent} from "./administrateur/administrateur.component";
+import {MedicineComponent} from "./medicine/medicine.component";
+import {CreateMedicineComponent} from "./create-medicine/create-medicine.component";
+import {EditMedicineComponent} from "./edit-medicine/edit-medicine.component";
 
 const routes: Routes = [
   { path: '', redirectTo:"/home-page", pathMatch: 'full' },
+  { path: 'administrateur', component: AdministrateurComponent },
   { path: "home-page", component: HomePageComponent },
   { path: "trouver-center", component: TrouverUnCentreComponent},
   { path: "conformer-reservation/:id", component: CreateReservationComponent},
@@ -28,7 +33,10 @@ const routes: Routes = [
   { path: "admin-administrateur", component: AdminAdministrateurComponent},
   { path: "create-administrateur", component: CreateAdministrateurComponent},
   { path: "edit-center/:id", component: EditCenterComponent },
-  { path: "edit-administrateur/:id", component: EditAdminstrateurComponent }
+  { path: "edit-administrateur/:id", component: EditAdminstrateurComponent },
+  { path: "medicine", component: MedicineComponent },
+  { path: "create-medicine", component: CreateMedicineComponent },
+  { path: "edit-medicine/:id", component: EditMedicineComponent }
 ];
 
 @NgModule({

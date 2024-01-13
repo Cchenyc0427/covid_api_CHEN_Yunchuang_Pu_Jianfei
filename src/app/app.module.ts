@@ -32,6 +32,11 @@ import { EditCenterComponent } from './edit-center/edit-center.component';
 import {NzTableModule} from "ng-zorro-antd/table";
 import {NzDividerModule} from "ng-zorro-antd/divider";
 import { EditAdminstrateurComponent } from './edit-adminstrateur/edit-adminstrateur.component';
+import { AdministrateurComponent } from './administrateur/administrateur.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { EditMedicineComponent } from './edit-medicine/edit-medicine.component';
+import { MedicineComponent } from './medicine/medicine.component';
+import { CreateMedicineComponent } from './create-medicine/create-medicine.component';
 
 registerLocaleData(zh);
 
@@ -51,7 +56,12 @@ registerLocaleData(zh);
     CreateAdministrateurComponent,
     HomePageComponent,
     EditCenterComponent,
-    EditAdminstrateurComponent
+    EditAdminstrateurComponent,
+    AdministrateurComponent,
+    MenuAdminComponent,
+    EditMedicineComponent,
+    MedicineComponent,
+    CreateMedicineComponent
   ],
   imports: [
     BrowserModule,
