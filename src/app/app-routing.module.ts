@@ -17,6 +17,7 @@ import {AdministrateurComponent} from "./administrateur/administrateur.component
 import {MedicineComponent} from "./medicine/medicine.component";
 import {CreateMedicineComponent} from "./create-medicine/create-medicine.component";
 import {EditMedicineComponent} from "./edit-medicine/edit-medicine.component";
+import {LoginAdminComponent} from "./login-admin/login-admin.component";
 
 const routes: Routes = [
   { path: '', redirectTo:"/home-page", pathMatch: 'full' },
@@ -36,7 +37,8 @@ const routes: Routes = [
   { path: "edit-administrateur/:id", component: EditAdminstrateurComponent },
   { path: "medicine", component: MedicineComponent },
   { path: "create-medicine", component: CreateMedicineComponent },
-  { path: "edit-medicine/:id", component: EditMedicineComponent }
+  { path: "edit-medicine/:id", component: EditMedicineComponent },
+  { path: "login-admin", component: LoginAdminComponent }
 ];
 
 @NgModule({

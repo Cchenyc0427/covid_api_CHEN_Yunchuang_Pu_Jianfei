@@ -35,6 +35,10 @@ export class DataService {
 
   private updateMedicineUrl = "http://localhost:4200/api/medicin";
 
+  private superAdminLoginUrl = "http://localhost:4200/api/superAdmin/login";
+
+  private administrateurLoginUrl = "http://localhost:4200/api/admin/login";
+
 
   constructor(private http: HttpClient) {
   }
@@ -95,5 +99,13 @@ export class DataService {
 
   createMedicine(medicineData: any){
     return this.http.post(this.deleteMedicineUrl, medicineData);
+  }
+
+  valideSuperAdminLogin(mail?: string, password?: string) {
+    return this.http.get(this.superAdminLoginUrl + `?mail=${mail}&password=${password}`);
+  }
+
+  valideAdministrateurLogin(mail?: string, password?: string) {
+    return this.http.get(this.administrateurLoginUrl + `?mail=${mail}&password=${password}`);
   }
 }

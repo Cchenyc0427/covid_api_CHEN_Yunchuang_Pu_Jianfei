@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, NonNullableFormBuilder, Validators } from '@angular/forms';
+import {FormControl, FormGroup, NonNullableFormBuilder, Validators} from "@angular/forms";
 import { Router } from "@angular/router";
 import {DataService} from "../data.service";
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-login-admin',
   template: `
     <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
       <nz-form-item>
@@ -28,9 +28,9 @@ import {DataService} from "../data.service";
       </nz-form-item>
     </form>
   `,
-  styleUrls: ['./login.component.less'],
+  styleUrls: ['./login-admin.component.less']
 })
-export class NzDemoFormHorizontalLoginComponent {
+export class LoginAdminComponent {
   validateForm: FormGroup<{
     userName: FormControl<string>;
     password: FormControl<string>;
@@ -41,14 +41,12 @@ export class NzDemoFormHorizontalLoginComponent {
     remember: [true]
   });
 
-
-
   constructor(private fb: NonNullableFormBuilder, private Router: Router, private dataService: DataService) {}
   submitForm(): void {
     console.log('submit', this.validateForm.value);
-    this.dataService.valideSuperAdminLogin(this.validateForm.value.userName, this.validateForm.value.password).subscribe((response: any) => {
+    this.dataService.valideAdministrateurLogin(this.validateForm.value.userName, this.validateForm.value.password).subscribe((response: any) => {
       if(response) {
-        this.Router.navigate(['super-admin']);
+        this.Router.navigate(['administrateur']);
       }
       else {
         this.Router.navigate(['reservation-failed']);

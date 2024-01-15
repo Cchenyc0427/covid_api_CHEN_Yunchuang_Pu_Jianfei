@@ -37,6 +37,7 @@ import { MenuAdminComponent } from './menu-admin/menu-admin.component';
 import { EditMedicineComponent } from './edit-medicine/edit-medicine.component';
 import { MedicineComponent } from './medicine/medicine.component';
 import { CreateMedicineComponent } from './create-medicine/create-medicine.component';
+import { LoginAdminComponent } from './login-admin/login-admin.component';
 
 registerLocaleData(zh);
 
@@ -61,7 +62,8 @@ registerLocaleData(zh);
     MenuAdminComponent,
     EditMedicineComponent,
     MedicineComponent,
-    CreateMedicineComponent
+    CreateMedicineComponent,
+    LoginAdminComponent
   ],
   imports: [
     BrowserModule,

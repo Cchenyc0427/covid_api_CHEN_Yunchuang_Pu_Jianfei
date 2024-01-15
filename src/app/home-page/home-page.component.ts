@@ -42,11 +42,11 @@ import {NzButtonSize} from 'ng-zorro-antd/button';
 
 export class HomePageComponent {
   handleOnClickSuperAdmin = () => {
-    window.location.href = "./super-admin";
+    window.location.href = "./login";
   }
 
   handleOnClickAdminstrateur = () => {
-    window.location.href = "./administrateur";
+    window.location.href = "./login-admin";
   }
 
   handleOnClickMedicine = () => {
