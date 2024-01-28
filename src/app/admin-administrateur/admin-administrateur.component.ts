@@ -64,10 +64,10 @@ export class AdminAdministrateurComponent {
     return this.dataService.searchAdministrateur().subscribe((response: any) => {
       this.listofData = response;
       console.log("GET administrateurs success");
-    }),
+    },
       (errInfo: any) => {
         console.error("GET administrateurs failed", errInfo);
-      }
+      });
   };
 
   handleEditAministrateur = (administrateurId: number) => {
@@ -79,10 +79,10 @@ export class AdminAdministrateurComponent {
     return this.dataService.deleteAdministrateur(administrateurId).subscribe((response: any) => {
       this.Router.navigate(['reservation-success']);
       console.log('Delete administrateur successfully:', response);
-    }), (errInfo: any) => {
+    }, (errInfo: any) => {
       console.error(errInfo);
       this.Router.navigate(['reservation-failed']);
-    };
+    });
   }
 
 }

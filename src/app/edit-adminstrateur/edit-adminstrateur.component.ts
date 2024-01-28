@@ -86,11 +86,11 @@ export class EditAdminstrateurComponent {
     this.dataService.updateAdministrateur(editAdministrateurData).subscribe((response) => {
       this.Router.navigate(['reservation-success']);
       console.log('Update administrateur request successful:', response);
-    }),
+    },
       (errInfo: any) => {
         console.error(errInfo);
         this.Router.navigate(['reservation-failed']);
-      };
+      });
   }
 
   resetForm(e: MouseEvent): void {

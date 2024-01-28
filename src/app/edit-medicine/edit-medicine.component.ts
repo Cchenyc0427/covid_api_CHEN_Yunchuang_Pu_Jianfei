@@ -86,11 +86,11 @@ export class EditMedicineComponent {
     this.dataService.updateMedicine(editMedicineData).subscribe((response) => {
       this.Router.navigate(['reservation-success']);
       console.log('Update medicine request successful:', response);
-    }),
+    },
       (errInfo: any) => {
         console.error(errInfo);
         this.Router.navigate(['reservation-failed']);
-      };
+      });
   }
 
   resetForm(e: MouseEvent): void {

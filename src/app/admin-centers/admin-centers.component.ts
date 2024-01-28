@@ -55,11 +55,11 @@ export class AdminCentersComponent {
     this.dataService.deleteCenters(id).subscribe((response) => {
       this.Router.navigate(['reservation-success']);
       console.log('PUT request successful:', response);
-    }),
+    },
       (errInfo: any) => {
         console.error(errInfo);
         this.Router.navigate(['reservation-failed']);
-      };
+      });
 }
 
   fetchCenterByCity() {

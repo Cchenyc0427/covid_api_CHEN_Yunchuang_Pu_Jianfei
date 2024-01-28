@@ -63,10 +63,10 @@ export class MedicineComponent {
     return this.dataService.searchMedicine().subscribe((response: any) => {
       this.listofData = response;
       console.log("GET Medicines success");
-    }),
+    },
       (errInfo: any) => {
         console.error("GET Medicines failed", errInfo);
-      }
+      });
   };
 
   handleEditMedicine = (id: number) => {
@@ -78,9 +78,9 @@ export class MedicineComponent {
     return this.dataService.deleteMedicine(id).subscribe((response: any) => {
       this.Router.navigate(['reservation-success']);
       console.log('Delete Medicine successfully:', response);
-    }), (errInfo: any) => {
+    }, (errInfo: any) => {
       console.error(errInfo);
       this.Router.navigate(['reservation-failed']);
-    };
+    });
   }
 }

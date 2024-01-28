@@ -68,11 +68,11 @@ export class EditCenterComponent {
     this.dataService.updateCenters(editCenterData).subscribe((response) => {
       this.Router.navigate(['reservation-success']);
       console.log('PUT request successful:', response);
-    }),
+    },
       (errInfo: any) => {
         console.error(errInfo);
         this.Router.navigate(['reservation-failed']);
-      };
+      });
   }
 
   resetForm(e: MouseEvent): void {

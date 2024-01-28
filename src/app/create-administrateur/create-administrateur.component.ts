@@ -87,16 +87,16 @@ export class CreateAdministrateurComponent {
     const editAdministrateurData = {
       ...this.validateForm.value
     }
-    console.log('---------------------',editAdministrateurData);
+    //console.log('---------------------',editAdministrateurData);
 
     this.dataService.createAdministrateur(editAdministrateurData).subscribe((response) => {
       this.Router.navigate(['reservation-success']);
-      console.log('Update administrateur request successful:', response);
-    }),
+     // console.log('Update administrateur request successful:', response);
+    },
       (errInfo: any) => {
-        console.error(errInfo);
+        //console.error("-----------------error",errInfo);
         this.Router.navigate(['reservation-failed']);
-      };
+      });
   }
 
   resetForm(e: MouseEvent): void {

@@ -64,10 +64,10 @@ export class CreateReservationComponent{
     this.dataService.createReservation(rdvData).subscribe ((response) => {
       this.Router.navigate(['reservation-success']);
       console.log('POST request successful:', response);
-    }),
+    },
       (errInfo: any) => {
       console.error(errInfo);
       this.Router.navigate(['reservation-failed']);
-    };
+    });
   }
 }
