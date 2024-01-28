@@ -6,8 +6,7 @@ import jakarta.persistence.*;
 @Entity
 public class Administrateur {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "administrateur_id")
-    @SequenceGenerator(name = "administrateur_id", sequenceName = "administrateur_administrateur_id_seq",allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer administrateurId;
     private String nom;
     private String prenom;

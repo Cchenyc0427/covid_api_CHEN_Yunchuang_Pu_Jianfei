@@ -11,8 +11,7 @@ import java.util.List;
 @Entity
 public class VaccinationCenter {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "center_id")
-    @SequenceGenerator(name = "center_id", sequenceName = "vaccination_center_id_seq",allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;

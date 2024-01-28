@@ -12,8 +12,7 @@ import java.util.Date;
 @Entity
 public class rdv {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rdv_id")
-    @SequenceGenerator(name = "rdv_id", sequenceName = "rdv_id_seq",allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nom;
     private String prenom;
