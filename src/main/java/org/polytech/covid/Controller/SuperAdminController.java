@@ -8,6 +8,7 @@ import org.polytech.covid.Service.SuperAdminAdministrateurService;
 import org.polytech.covid.Service.SuperAdminService;
 import org.polytech.covid.Service.SuperAdminVaccinationCenterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.swing.text.html.Option;
@@ -53,7 +54,7 @@ public class SuperAdminController {
     }
 
     @PostMapping("api/superAdmin/administrateur")
-    public Administrateur addAdministrateur(@RequestBody Administrateur administrateur ){
+    public ResponseEntity addAdministrateur(@RequestBody Administrateur administrateur ){
         return superAdminAdministrateurService.addAdministrateur(administrateur);
     }
 

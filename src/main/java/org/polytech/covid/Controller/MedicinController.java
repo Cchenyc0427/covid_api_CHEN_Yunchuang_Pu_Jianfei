@@ -4,6 +4,7 @@ import org.polytech.covid.Entity.Medicin;
 import org.polytech.covid.Entity.rdv;
 import org.polytech.covid.Service.medicinService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -50,7 +51,7 @@ public class MedicinController {
     }
 
     @PostMapping("api/medicin")
-    public Medicin addMedicin(@RequestBody Medicin medicin){
+    public ResponseEntity addMedicin(@RequestBody Medicin medicin){
         return medicinService.addMedicin(medicin);
     }
 }

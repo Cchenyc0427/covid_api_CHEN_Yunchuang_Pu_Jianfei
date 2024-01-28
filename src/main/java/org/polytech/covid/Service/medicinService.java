@@ -1,8 +1,11 @@
 package org.polytech.covid.Service;
 
+import jakarta.transaction.Transactional;
 import org.polytech.covid.Entity.Medicin;
 import org.polytech.covid.repository.medicinRespository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,9 +26,19 @@ public class medicinService {
     public List<Medicin> findAll(){
         return medicinRespository.findAll();
     }
+    @Transactional
+    public ResponseEntity addMedicin(Medicin medicin){
+            String mail = medicin.getMail();
+            if(findByMail(mail) == null){
+                Medicin savedMedicin = medicinRespository.save(medicin);
+                return ResponseEntity.ok(savedMedicin);
+            } else {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Email already exists");
+            }
+    }
 
-    public Medicin addMedicin(Medicin medicin){
-        return medicinRespository.save(medicin);
+    public Medicin findByMail(String mail){
+        return medicinRespository.findMedicinByMail(mail);
     }
     public void deleteMedicinById(Integer id){
         medicinRespository.deleteById(id);
